@@ -97,3 +97,20 @@ function colocaNumeroBombas(vari, varj, fini, finj, tablero) {
         }
     }
 }
+
+/// funcion que permite generar las bombas dentro del tablero de forma aleatoria
+function generarBombas(tablero) {
+    var fil = 0;
+    var col = 0;
+
+    fil = Math.floor((Math.random() * 9) + 0);
+    col = Math.floor((Math.random() * 9) + 0);
+
+    for (var i = 0; i < 10; i++) {
+        while (tablero[fil][col] == "*") {
+            fil = Math.floor((Math.random() * 9) + 0);
+            col = Math.floor((Math.random() * 9) + 0);
+        }
+        tablero[fil][col] = "*";
+    }
+}
