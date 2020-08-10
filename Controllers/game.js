@@ -1,5 +1,6 @@
 var minas = inicializaMatriz();
 
+//Funcion
 function inicializaMatriz() {
     var tabla = [];
     for (var i = 0; i < 10; i++) {
