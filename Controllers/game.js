@@ -85,3 +85,15 @@ function bombasAlrededor(tablero) {
         }
     }
 }
+
+
+//Poner bombas 
+function colocaNumeroBombas(vari, varj, fini, finj, tablero) {
+    for (var i = vari; i <= fini; i++) {
+        for (var j = varj; j <= finj; j++) {
+            if (tablero[i][j] != "*") {
+                tablero[i][j] = (parseInt(tablero[i][j]) + 1);
+            }
+        }
+    }
+}
