@@ -114,3 +114,31 @@ function generarBombas(tablero) {
         tablero[fil][col] = "*";
     }
 }
+
+// visuaiazar ceros
+function abrirCeros(vari, varj, fini, finj, cori, corj, tablero) {
+    for (var i = vari; i <= fini; i++) {
+        for (var j = varj; j <= finj; j++) {
+            var myid = i + "" + j;
+            var objDiv = document.getElementById(myid)
+            if (objDiv.textContent == "") {
+                if (tablero[i][j] == 0) {
+                    if (i == cori && j == corj) {
+                        objDiv.textContent = "";
+                        objDiv.style.backgroundColor = "white";
+                    } else {
+                        if (objDiv.style.backgroundColor != "white") {
+                            abrirAlrededor(i, j, tablero);
+                        }
+                    }
+
+                } else {
+                    if (tablero[i][j] != "*") {
+                        document.getElementById(myid).innerHTML = "<p style='margin-top:15px;'>" + tablero[i][j] + "</p>";
+                        objDiv.style.backgroundColor = "white";
+                    }
+                }
+            }
+        }
+    }
+}
