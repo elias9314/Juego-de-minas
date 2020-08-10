@@ -115,7 +115,7 @@ function generarBombas(tablero) {
     }
 }
 
-// visuaiazar ceros
+// visualizar ceros
 function abrirCeros(vari, varj, fini, finj, cori, corj, tablero) {
     for (var i = vari; i <= fini; i++) {
         for (var j = varj; j <= finj; j++) {
@@ -140,5 +140,41 @@ function abrirCeros(vari, varj, fini, finj, cori, corj, tablero) {
                 }
             }
         }
+    }
+}
+
+// funcion que nos ayuda a expandir vacios //////
+function abrirAlrededor(xi, xj, tablero) {
+    if (xi == 0 && xj == 0) {
+        abrirCeros(xi, xj, xi + 1, xj + 1, xi, xj, tablero);
+    }
+    else if (xi == 0 && (xj > 0 && xj < 9)) {
+        abrirCeros(xi, xj - 1, xi + 1, xj + 1, xi, xj, tablero);
+    }
+    else if (xi == 0 && xj == 9) {
+        abrirCeros(xi, xj - 1, xi + 1, xj, xi, xj, tablero);
+    }
+    else if (xj == 9 && (xi > 0 && xi < 9)) {
+        abrirCeros(xi - 1, xj - 1, xi + 1, xj, xi, xj, tablero);
+    }
+    else if (xi == 9 && xj == 9) {
+        abrirCeros(xi - 1, xj - 1, xi, xj, xi, xj, tablero);
+    }
+    else if (xi == 9 && (xj > 0 && xj < 9)) {
+        abrirCeros(xi - 1, xj - 1, xi, xj + 1, xi, xj, tablero);
+    }
+    else if (xi == 9 && xj == 0) {
+        abrirCeros(xi - 1, xj, xi, xj + 1, xi, xj, tablero);
+    }
+    else if (xi == 9 && xj == 0) {
+        abrirCeros(xi - 1, xj, xi, xj + 1, xi, xj, tablero);
+    }
+    else if (xi == 9 && xj == 0) {
+        abrirCeros(xi - 1, xj, xi, xj + 1, xi, xj, tablero);
+    }
+    else if (xj == 0 && (xi > 0 && xi < 9)) {
+        abrirCeros(xi - 1, xj, xi + 1, xj + 1, xi, xj, tablero);
+    } else {
+        abrirCeros(xi - 1, xj - 1, xi + 1, xj + 1, xi, xj, tablero);
     }
 }
