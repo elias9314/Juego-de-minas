@@ -37,7 +37,7 @@ function mostrarNumero(e) {
             document.getElementById(myid).innerHTML = "<p style='margin-top:15px;'>" + minas[parseInt(auxstr[0], 10)][parseInt(auxstr[1], 10)] + "</p>";
             divObj.style.backgroundColor = "white";
         } else {
-            divObj.style.backgroundImage = "url(../images/bom.jpg)";
+            divObj.style.backgroundImage = "url(../images/bb.jpg)";
             abrirTablero(minas);
             setTimeout(function(){ location.reload(); }, 300);
         }
@@ -185,7 +185,7 @@ function abrirTablero(tablero) {
             var myid = i + "" + j;
             var objDiv = document.getElementById(myid);
             if (tablero[i][j] == "*") {
-                objDiv.style.backgroundImage = "url(../images/bom.jpg)";
+                objDiv.style.backgroundImage = "url(../images/bb.jpg)";
             }
         }
     }
