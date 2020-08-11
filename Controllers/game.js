@@ -178,3 +178,31 @@ function abrirAlrededor(xi, xj, tablero) {
         abrirCeros(xi - 1, xj - 1, xi + 1, xj + 1, xi, xj, tablero);
     }
 }
+// Funcion par abrir el tablero 
+function abrirTablero(tablero) {
+    for (var i = 0; i < 10; i++) {
+        for (var j = 0; j < 10; j++) {
+            var myid = i + "" + j;
+            var objDiv = document.getElementById(myid);
+            if (tablero[i][j] == "*") {
+                objDiv.style.backgroundImage = "url(../images/bomba.jpg)";
+            }
+        }
+    }
+}
+
+//Cargamos las funciones
+
+
+function cargarTablero() {
+    crearTablero();
+    generarBombas(minas);
+    bombasAlrededor(minas);
+    console.log(document.getElementById('username'))
+    var username = localStorage.getItem('SecretUser')
+    var seccion = document.getElementById('username')
+    var newContent = document.createTextNode(`Username : ${username}`)
+    
+    seccion.appendChild(newContent)
+
+}
